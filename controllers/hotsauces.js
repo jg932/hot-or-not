@@ -28,7 +28,7 @@ function create(res,req) {
   })
   .catch(error => {
     console.log(error)
-    // res.redirect('/index')
+    res.redirect('/index')
   })
 }
 

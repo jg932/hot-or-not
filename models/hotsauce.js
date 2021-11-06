@@ -18,7 +18,7 @@ const hotSauceSchema = new Schema({
     enum: ["Mild", "Medium", "Hot", "Spicy", "Spice Spice", "Extreme", "☠️",]
   },
   purchaseLink: String,
-  owner: {type: Schema.Types.ObjectId, ref: "Profile"}
+  // owner: {type: Schema.Types.ObjectId, ref: "Profile"}
 },
 {
   timestamps: true,

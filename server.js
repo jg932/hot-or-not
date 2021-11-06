@@ -17,7 +17,7 @@ import('./config/passport.js')
 // require routes
 import { router as indexRouter } from './routes/index.js'
 import { router as authRouter } from './routes/auth.js'
-import { router as hotSauceRouter } from './routes/hotsauces.js'
+import { router as hotsauceRouter } from './routes/hotsauces.js'
 import { passUserToView } from './middleware/middleware.js'
 
 // create the express app
@@ -63,7 +63,7 @@ app.use(passUserToView)
 //mounted routers
 app.use('/', indexRouter)
 app.use('/auth', authRouter)
-app.use('/hotsauces', hotSauceRouter)
+app.use('/hotsauces', hotsauceRouter)
 
 
 // catch 404 and forward to error handler
