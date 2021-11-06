@@ -57,12 +57,14 @@ app.use(
 app.use(passport.initialize())
 app.use(passport.session())
 
+// custom middleware
 app.use(passUserToView)
 
-// router middleware
+//mounted routers
 app.use('/', indexRouter)
 app.use('/auth', authRouter)
 app.use('/hotsauces', hotSauceRouter)
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

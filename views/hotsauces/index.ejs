@@ -1,0 +1,22 @@
+<%- include('../partials/html-head') %>
+
+<%- include('../partials/nav') %>
+
+<section>
+  <h1>🌶️  Hot Sauce Database 🌶️</h1>
+  <ul>
+    <% hotsauces.forEach(hotsauce => { %>
+      <li>🌶️ <%= hotsauce.name %> has a spice rating of <%= hotsauce.spiciness %> </li>
+    <% }) %>
+  </ul>
+</section>
+
+
+
+
+
+
+
+
+
+<%- include('../partials/footer') %>
