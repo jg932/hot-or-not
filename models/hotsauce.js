@@ -11,6 +11,9 @@ const hotSauceSchema = new mongoose.Schema({
   spiciness: String,
   purchaseLink: String,
   // owner: {type: Schema.Types.ObjectId, ref: "Profile"}
+},
+{
+  timestamps: true,
 })
 
 const Hotsauce = mongoose.model('Hotsauce', hotSauceSchema)
