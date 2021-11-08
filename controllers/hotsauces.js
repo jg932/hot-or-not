@@ -45,8 +45,24 @@ function create(req,res) {
 //   })
 // }
 
+function show(req, res) {
+  Hotsauce.findById(req.params.id)
+  .populate("owner")
+  .then(hotsauce => {
+    res.render("hotsauces/show", {
+      hotsauce,
+      title: "sauce details"
+    })
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect("/hotsauces")
+  })
+}
+
 export {
   index,
   create,
   // newHotsauce as new,
+  show,
 }
