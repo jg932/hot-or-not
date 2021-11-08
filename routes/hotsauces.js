@@ -9,6 +9,7 @@ router.get('/', hotsaucesCtrl.index)
 router.get("/:id", hotsaucesCtrl.show)
 
 router.post('/', isLoggedIn, hotsaucesCtrl.create)
+router.post('/:id/reviews', isLoggedIn,hotsaucesCtrl.createReview)
 
 router.delete("/:id", isLoggedIn, hotsaucesCtrl.deleteHotsauce)
 

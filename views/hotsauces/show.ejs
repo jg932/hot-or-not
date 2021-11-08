@@ -12,4 +12,85 @@
   <% } %> 
 </section>
 
+<section>
+  <% if (user) { %>
+    <form action="/hotsauces" method="POST">
+      <label>
+        Your Name: 
+        <input type="text" name="reviewersName" autocomplete="off">
+      </label><br>
+      <label for="reviewersPreference">What is your personal spicy preference:
+        <select name=reviewersPreference>
+          <option value="Mild">Mild</option>
+          <option value="Medium">Medium</option>
+          <option value="Hot">Hot</option>
+          <option value="Spicy">Spicy</option>
+          <option value="Spice Spice">Spice Spice</option>
+          <option value="Extreme">Extreme Spice Spice</option>
+          <option value="☠️">☠️</option>
+        </select>
+      <label><br>
+      <label>
+        Review:
+        <input type="textArea" name="review" autocomplete="off">
+      </label><br>
+      <label for="rating">Overall rating
+        <select name=rating>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </label><br>
+      <label for="spiciness">Spice Spice Scale:
+        <select name=spiciness>
+          <option value="Mild">Mild</option>
+          <option value="Medium">Medium</option>
+          <option value="Hot">Hot</option>
+          <option value="Spicy">Spicy</option>
+          <option value="Spice Spice">Spice Spice</option>
+          <option value="Extreme">Extreme Spice Spice</option>
+          <option value="☠️">☠️</option>
+        </select>
+      <label><br>
+        Purchase Info:
+        <input type="text" name="purchaseInfo" autocomplete="off">
+      </label><br>
+      <button type="submit">Add Sauce</button>
+    </form>
+  <% } %>
+</section>
+
+<% if (hotsauce.reviews.length) { %>
+  <table>
+    <thead>
+      <tr>
+        <th>Reviewer</th>
+        <th>Reviewers Preference</th>
+        <th>Review</th>
+        <th>Rating</th>
+        <th>Spice Rating</th>
+        <th>Purchase Info</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% hotsauce.reviews.forEach(function(review) {%>
+        <tr>
+          <td><%= review.reviewersName %></td>
+          <td><%= review.reviewersPreference %></td>
+          <td><%= review.review %></td>
+          <td><%= review.rating %></td>
+          <td><%= review.spiciness %></td>
+          <td><%= review.purchaseInfo %></td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+<% } else { %>
+  <h3>No Reviews So Far</h3>
+  <% } %>
+</main>
+
+<%- include('../partials/footer') %>
 <%- include('../partials/footer') %>

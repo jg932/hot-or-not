@@ -78,10 +78,20 @@ function deleteHotsauce(req, res) {
   })
 }
 
+function createReview(req,res) {
+  Hotsauce.findById(req.params.id, function(error, hotsauce){
+    hotsauce.reviews.push(req.body)
+    hotsauce.save(function(error) {
+      res.redirect(`/hotsauces/${hotsauce._id}`)
+    })
+  })
+}
+
 export {
   index,
   create,
   // newHotsauce as new,
   show,
   deleteHotsauce,
+  createReview,
 }
