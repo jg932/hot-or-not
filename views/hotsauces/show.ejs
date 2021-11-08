@@ -14,7 +14,7 @@
 
 <section>
   <% if (user) { %>
-    <form action="/hotsauces" method="POST">
+    <form action="/hotsauces/<%= hotsauce._id %>" method="POST">
       <label>
         Your Name: 
         <input type="text" name="reviewersName" autocomplete="off">
