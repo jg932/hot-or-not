@@ -4,7 +4,7 @@ function index(req, res) {
   Hotsauce.find({})
   .then(hotsauces => {
     res.render("hotsauces/index", {
-      title: "🌶️",
+      title: "Hot or Not",
       hotsauces,
     })
   })
@@ -60,9 +60,28 @@ function show(req, res) {
   })
 }
 
+function deleteHotsauce(req, res) {
+  Hotsauce.findById(req.params.id)
+  .then(hotsauce => {
+    if (hotsauce.owner.equals(req.user.profile._id)) {
+      hotsauce.delete()
+      .then(() => {
+        res.redirect("/hotsauces")
+      })
+    } else {
+      throw new Error ("🚫 Not Authorized! 🚫")
+    }
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect("/hotsauces")
+  })
+}
+
 export {
   index,
   create,
   // newHotsauce as new,
   show,
+  deleteHotsauce,
 }

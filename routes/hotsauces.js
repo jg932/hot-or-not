@@ -10,6 +10,8 @@ router.get("/:id", hotsaucesCtrl.show)
 
 router.post('/', isLoggedIn, hotsaucesCtrl.create)
 
+router.delete("/:id", isLoggedIn, hotsaucesCtrl.deleteHotsauce)
+
 export {
   router,
 }
