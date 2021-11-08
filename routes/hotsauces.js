@@ -1,13 +1,13 @@
 import { Router } from 'express'
-import * as hotsauceCtrl from '../controllers/hotsauces.js'
+import * as hotsaucesCtrl from '../controllers/hotsauces.js'
 import {isLoggedIn} from '../middleware/middleware.js'
 
 const router = Router()
 
-router.get('/index', hotsauceCtrl.index)
-router.get('/new', hotsauceCtrl.new)
+router.get('/', hotsaucesCtrl.index)
+// router.get('/new', hotsaucesCtrl.new)
 
-router.post('/', isLoggedIn, hotsauceCtrl.create)
+router.post('/', isLoggedIn, hotsaucesCtrl.create)
 
 export {
   router,

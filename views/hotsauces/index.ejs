@@ -3,18 +3,26 @@
 <%- include('../partials/nav') %>
 
 <section>
-  <h1>🌶️  Hot Sauce Database 🌶️</h1>
+  <h1>Hot Sauce Database</h1>
+  <% if (user) { %> 
+  <h2>Add a New Sauce</h2>
+  <form action="/hotsauces" method="POST">
+    <label>
+      Name:
+      <input type="text" name="name" autocomplete="off">
+    </label>
+    <button type="submit"> Add Sauce</button>
+  </form>
+    <% } %> 
+  <h2>All the Sauces!</h2>
   <ul>
     <% hotsauces.forEach(hotsauce => { %>
-      <li>🌶️ <%= hotsauce.name %> has a spice rating of <%= hotsauce.spiciness %> </li>
+      <li>
+        <a href="/hotsauces/<%= hotsauce._id %>"><%= hotsauce.name %></a>
+      </li>
     <% }) %>
   </ul>
 </section>
-
-
-
-
-
 
 
 
