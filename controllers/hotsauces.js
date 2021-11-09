@@ -78,7 +78,8 @@ function deleteHotsauce(req, res) {
   })
 }
 
-function createReview(req,res) {
+function createReview(req, res) {
+  console.log("LOOOOOOOOK", req.params.id)
   Hotsauce.findById(req.params.id, function(error, hotsauce){
     hotsauce.reviews.push(req.body)
     hotsauce.save(function(error) {
