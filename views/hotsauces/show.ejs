@@ -3,7 +3,7 @@
 <%- include('../partials/nav') %>
 
 <section>
-  <h1>Sauce added by <%= hotsauce.owner.name %></h1>
+  <h1> <%= hotsauce.name %> added by <%= hotsauce.owner.name %></h1>
   <br>
   <% if (hotsauce.owner.equals(user?.profile._id)) { %>
     <form action="/hotsauces/<%= hotsauce._id %>?_method=DELETE" method="POST">
