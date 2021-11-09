@@ -6,7 +6,7 @@
 <section>
   <h1>Edit the Review!</h1>
       <% if (user) { %>
-        <form action="/hotsauces/<%= hotsauce._id %>" method="POST">
+        <form action="/hotsauces/<%= hotsauce._id %>" method="PUT">
           <label>
             Your Name: 
             <input type="text" name="reviewersName" autocomplete="off">
@@ -24,7 +24,7 @@
           <label><br>
           <label>
             Review:
-            <input type="textArea" name="review" autocomplete="off">
+            <input type="text" name="review" autocomplete="off">
           </label><br>
           <label for="rating">Overall rating
             <select name=rating>
@@ -49,7 +49,6 @@
             Purchase Info:
             <input type="text" name="purchaseInfo" autocomplete="off">
           </label><br>
-          <button type="submit">Add Sauce</button>
         </form>
       <% } %>
     <button type="submit">Save</button>
