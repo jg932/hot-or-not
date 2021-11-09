@@ -1,0 +1,57 @@
+<%- include("../partials/html-head") %>
+
+<%- include("../partials/nav") %>
+
+
+<section>
+  <h1>Edit the Review!</h1>
+      <% if (user) { %>
+        <form action="/hotsauces/<%= hotsauce._id %>" method="POST">
+          <label>
+            Your Name: 
+            <input type="text" name="reviewersName" autocomplete="off">
+          </label><br>
+          <label for="reviewersPreference">What is your personal spicy preference:
+            <select name=reviewersPreference>
+              <option value="Mild">Mild</option>
+              <option value="Medium">Medium</option>
+              <option value="Hot">Hot</option>
+              <option value="Spicy">Spicy</option>
+              <option value="Spice Spice">Spice Spice</option>
+              <option value="Extreme">Extreme Spice Spice</option>
+              <option value="☠️">☠️</option>
+            </select>
+          <label><br>
+          <label>
+            Review:
+            <input type="textArea" name="review" autocomplete="off">
+          </label><br>
+          <label for="rating">Overall rating
+            <select name=rating>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </label><br>
+          <label for="spiciness">Spice Spice Scale:
+            <select name=spiciness>
+              <option value="Mild">Mild</option>
+              <option value="Medium">Medium</option>
+              <option value="Hot">Hot</option>
+              <option value="Spicy">Spicy</option>
+              <option value="Spice Spice">Spice Spice</option>
+              <option value="Extreme">Extreme Spice Spice</option>
+              <option value="☠️">☠️</option>
+            </select>
+          <label><br>
+            Purchase Info:
+            <input type="text" name="purchaseInfo" autocomplete="off">
+          </label><br>
+          <button type="submit">Add Sauce</button>
+        </form>
+      <% } %>
+    <button type="submit">Save</button>
+  </form>
+</section>

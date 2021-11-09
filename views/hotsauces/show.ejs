@@ -83,6 +83,12 @@
           <td><%= review.rating %></td>
           <td><%= review.spiciness %></td>
           <td><%= review.purchaseInfo %></td>
+          <td><% if (hotsauce.owner.equals(user?.profile._id)) { %>
+            <form action="/hotsauce/<%= hotsauce.review._id %>/edit" method="GET">
+              <button class="btn" type="submit">Edit</button>
+            <% } %>
+            </form>
+          </td>
         </tr>
       <% }) %>
     </tbody>

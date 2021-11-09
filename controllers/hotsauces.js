@@ -33,18 +33,6 @@ function create(req,res) {
   })
 }
 
-// function create(res,req) {
-//   console.log("This is my hotsuace", req.body)
-//   Hotsauce.create(req.body)
-//   .then(hotsauce => {
-//     res.redirect('/hotsauces/index')
-//   })
-//   .catch(error => {
-//     console.log(error)
-//     res.redirect('/index')
-//   })
-// }
-
 function show(req, res) {
   Hotsauce.findById(req.params.id)
   .populate("owner")
@@ -87,11 +75,44 @@ function createReview(req, res) {
   })
 }
 
+function edit(req, res) {
+  Hotsauce.review.findById(req.params.id)
+  .then(hotsauce => {
+    res.render('hotsauces/edit', {
+      title: 'Edit',
+      hotsauce,
+    })
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/hotsauces')
+  })
+}
+
+function update(req, res) {
+  Hotsauce.findById(req.params.id)
+  .then(hotsauce => {
+    if (hotsauce.owner.equals(req.user.profile._id)) {
+      hotsauce.updateOne(req.body, {new: true})
+      .then(() => {
+        res.redirect(`/hotsauces/${hotsauce._id}`)
+      })
+    } else {
+      throw new Error ("🚫 Not Authorized! 🚫")
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/hotsauces")
+  })
+}
+
 export {
   index,
   create,
-  // newHotsauce as new,
   show,
   deleteHotsauce,
   createReview,
+  update, 
+  edit,
 }
