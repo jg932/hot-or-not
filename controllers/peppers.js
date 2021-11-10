@@ -3,7 +3,7 @@ import { Pepper } from '../models/peppers.js'
 function newPepper(req, res) {
   Pepper.find({}, function(error, peppers){
     res.render('peppers/new', {
-      title: "Add Pepper",
+      title: "Pepper Database",
       peppers: peppers,
     })
   })

@@ -4,22 +4,34 @@
 
 <div id=pepper-background>
 <main>
-  <h1><%= title %></h1>
+  <h1 id="pepper-database"><%= title %></h1>
+  <div id="pepper-page"></div>
+
   <p>Please check the dropdown for the pepper before adding:
     <select>
       <% peppers.forEach(function(pepper) { %>
         <option><%= pepper.pepper %></option>
       <% }) %>
     </select>
+    <div id="animated-pepper-two">🌶️</div>
   </p>
   <form id="add-pepper-form" action="/peppers" method="POST" placeholder="Pepper Name">
+    <div id="animated-pepper-three">🌶️</div>
     <label for="pepper-name" placeholder="Pepper Name"></label>
     <input type="text" name="pepper" id="pepper-input" required>
     <button type="submit">Add Pepper</button>
   </form>
 </div>
+</div>
 </main>
 
 <%- include('../partials/footer') %> 
-
+<div id="animated-pepper-four">🌶️</div>
+<div id="animated-pepper-seven">🌶️</div>
+<div id="animated-pepper-nine">🌶️</div>
+<div id="animated-pepper-eight">🌶️</div>
+<div id="animated-pepper-one">🌶️</div>
+<div id="animated-pepper-five">🌶️</div>
+<div id="animated-pepper-ten">🌶️</div>
+<div id="animated-pepper-six">🌶️</div>
 </div>
