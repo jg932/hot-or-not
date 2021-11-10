@@ -30,6 +30,7 @@ nav {
   font-size: 1.6rem;
   display: flex;
   justify-content: space-around;
+  align-content: center;
 }
 
 main {
@@ -71,6 +72,10 @@ form {
 
 #welcome-message{
   padding: 0 50px 0 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 #pepper-background {
@@ -102,6 +107,9 @@ form {
   background-image: url("/images/hotsauces/spicy-fire-image.jpeg");
 }
 
+#google-button{
+  padding: 0 0 0 0;
+}
 
 
 /* this is a bad idea */
