@@ -76,7 +76,6 @@ function createReview(req, res) {
 }
 
 function edit(req, res) {
-  console.log("AM I EDITING?");
   Hotsauce.findById(req.params.id)
   .then(hotsauce => {
     res.render('hotsauces/edit', {
@@ -91,18 +90,17 @@ function edit(req, res) {
 }
 
 function update(req, res) {
+  console.log("I AM UPDATING")
   Hotsauce.findById(req.params.id)
-  .then(hotsauce => {
-    if (hotsauce.owner.equals(req.user.profile._id)) {
-      hotsauce.update(req.body)
-      .then(() => {
-        res.redirect(`/hotsauces/${hotsauce._id}`)
-      })
-    } else {
-      throw new Error ("🚫 Not Authorized! 🚫")
-    }
+  .then ( hotsauce => {
+    const review = hotsauce.reviews.id(req.params.review._id)
+    review.set(req.body)
+    hotsauce.save()
   })
-  .catch(err => {
+  .then (() => {
+    res.redirect(`/hotsauces/${hotsauce._id}`)
+  })
+    .catch(err => {
     console.log(err)
     res.redirect("/hotsauces")
   })

@@ -1,7 +1,6 @@
 import { Router } from 'express'
 import * as hotsaucesCtrl from '../controllers/hotsauces.js'
 import {isLoggedIn} from '../middleware/middleware.js'
-import { Hotsauce } from '../models/hotsauce.js'
 
 const router = Router()
 
@@ -13,7 +12,7 @@ router.get('/:id/edit', hotsaucesCtrl.edit)
 router.post('/', isLoggedIn, hotsaucesCtrl.create)
 router.post('/:id', isLoggedIn, hotsaucesCtrl.createReview)
 
-router.put('/:id', isLoggedIn, hotsaucesCtrl.update)
+router.put('/hotsauces/:id/reviews/:reviewId', isLoggedIn, hotsaucesCtrl.update)
 
 router.delete('/:id', isLoggedIn, hotsaucesCtrl.deleteHotsauce)
 

@@ -6,7 +6,7 @@
 <section>
   <h1>Edit the Review!</h1>
       <% if (user) { %>
-        <form action="/hotsauces/<%= hotsauce._id %>" method="PUT">
+        <form action="/hotsauces/<%= hotsauce._id %>/reviews/<%= review._id %>" method="PUT">
           <label>
             Your Name: 
             <input type="text" name="reviewersName" autocomplete="off">
