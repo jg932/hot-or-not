@@ -1,6 +1,7 @@
 <%- include('./partials/html-head') %>
 <%- include('./partials/nav') %>
 
+<div class="background-image">
 <main>
   <h1>hello, <%= user ? user.profile.name : "spice lovers!" %></h1>
   <% if (user?.profile.avatar) { %>
@@ -18,3 +19,4 @@
 </main>
 
 <%- include('./partials/footer') %>
+</div>

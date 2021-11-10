@@ -19,7 +19,6 @@ html {
 
 body {
   background-color: gray;
-  /* background-image: url("/images/hotsauces/backgroundOne.jpeg"); */
   /* Use a system font, if none are available use an available sans-sarif font */
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
         Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -40,10 +39,7 @@ main {
   flex-direction: column;
 }
 
-h1 {
-  font-size: 3.6rem;
-  color: white;
-}
+
 
 h2 {
   color: white;
@@ -56,4 +52,24 @@ h3 {
 
 form {
   color: white;
+}
+
+.background-image{
+  position: relative; 
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &::before {  
+  content: "";
+  background-image: url("/images/hotsauces/backgroundOne.jpeg");
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.2;
 }
