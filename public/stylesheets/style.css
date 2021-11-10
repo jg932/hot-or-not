@@ -26,10 +26,10 @@ body {
 }
 
 nav {
-  background-color: white;
+  background-color: rgba(255, 0, 0, 0.475);
   font-size: 1.6rem;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 main {
@@ -39,7 +39,10 @@ main {
   flex-direction: column;
 }
 
-
+h1 {
+  font-size: 3.6rem;
+  color: white;
+}
 
 h2 {
   color: white;
@@ -54,22 +57,31 @@ form {
   color: white;
 }
 
-.background-image{
-  position: relative; 
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  &::before {  
-  content: "";
-  background-image: url("/images/hotsauces/backgroundOne.jpeg");
-  background-size: cover;
+#background-image{
+  content: " ";
+  background: url("/images/hotsauces/backgroundOne.jpeg");
+  opacity: .2;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
   position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-  opacity: 0.2;
+  z-index: -1;
+}
+
+#welcome-message{
+  padding: 0 50px 0 50px;
+}
+
+#pepper-background {
+  background: url("/images/hotsauces/pepper-background.jpeg");
+  opacity: .5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  z-index: -1;
 }

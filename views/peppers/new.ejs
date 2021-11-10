@@ -2,6 +2,7 @@
 
 <%- include("../partials/nav") %>
 
+<div id=pepper-background>
 <main>
   <h1><%= title %></h1>
   <p>Please check the dropdown for the pepper before adding:
@@ -11,11 +12,14 @@
       <% }) %>
     </select>
   </p>
-  <form id="add-pepper-form" action="/peppers" method="POST">
-    <label for="pepper-name">Pepper:</label>
+  <form id="add-pepper-form" action="/peppers" method="POST" placeholder="Pepper Name">
+    <label for="pepper-name" placeholder="Pepper Name"></label>
     <input type="text" name="pepper" id="pepper-input" required>
     <button type="submit">Add Pepper</button>
   </form>
+</div>
 </main>
 
 <%- include('../partials/footer') %> 
+
+</div>
