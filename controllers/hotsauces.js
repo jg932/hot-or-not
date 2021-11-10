@@ -1,4 +1,5 @@
 import  { Hotsauce } from "../models/hotsauce.js"
+import mongoose from "mongoose"
 
 function index(req, res) {
   Hotsauce.find({})
@@ -76,6 +77,7 @@ function createReview(req, res) {
 }
 
 function edit(req, res) {
+  console.log("AM I HERE!!!");
   Hotsauce.findById(req.params.id)
   .then(hotsauce => {
     res.render('hotsauces/edit', {
@@ -106,6 +108,28 @@ function update(req, res) {
   })
 }
 
+function editReview(req, res) {
+  console.log("AM I HERE!!!");
+  Hotsauce.findById(req.params.id)
+  .then(hotsauce => {
+    console.log(req.params, hotsauce)
+    const review = hotsauce.reviews.find((review) => {
+      console.log(review._id, req.params.reviewId, mongoose.Types.ObjectId(req.params.reviewId), review._id.toString());
+      return review._id.toString() == req.params.reviewId;
+    })
+    console.log(review)
+    res.render('hotsauces/reviews/edit', {
+      title: 'Edit',
+      hotsauce,
+      review,
+    })
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/hotsauces')
+  })
+}
+
 export {
   index,
   create,
@@ -114,4 +138,5 @@ export {
   createReview,
   update, 
   edit,
+  editReview,
 }
