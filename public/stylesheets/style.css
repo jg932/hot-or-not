@@ -98,6 +98,10 @@ form {
   padding-top: 50px;
 }
 
+#spicy-image{
+  background-image: url("/images/hotsauces/spicy-fire-image.jpeg");
+}
+
 
 
 
@@ -255,3 +259,4 @@ form {
   70%{transform: translateY(700px)}
   100%{transform: translateY(650px)}
 }
+
