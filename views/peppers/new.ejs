@@ -4,46 +4,39 @@
 
 <div id=pepper-background>
 <main>
-  <h1 id="pepper-database"><%= title %></h1>
+  <h1 class="spicy-font" id="pepper-database"><%= title %></h1>
   <div id="pepper-page"></div>
 
-  <p>Please check the dropdown for the pepper before adding:
-    <select>
-      <% peppers.forEach(function(pepper) { %>
-        <option><%= pepper.pepper %></option>
-      <% }) %>
-    </select>
-
-  </p>
   <form id="add-pepper-form" action="/peppers" method="POST" placeholder="Pepper Name">
     <label for="pepper-name" placeholder="Pepper Name">
-      Pepper name:
       <input type="text" name="pepper" id="pepper-input" required>
     </label>
     <label>
-      Scoville Rating:<input type="number" name="scovilleRating" required>
-    </label>
-    <button class="all-buttons" type="submit">Add Pepper</button>
+      Pepper name | Scoville Rating<input type="number" name="scovilleRating" required>
+    </label> <br>
+    <button class="all-buttons" id="add-pepper-button" type="submit">Add Pepper</button>
   </form>
-  <h2>All the Peppers!</h2>
+  <h2 id="all-the-peppers">All the Peppers!</h2>
   <ul>
     <% peppers.forEach(pepper => { %>
       <li>
-        <h4><%= pepper.pepper %> - Scoville rating <%= pepper.scovilleRating %></h4>
+        <h5><%= pepper.pepper %> - Scoville rating <%= pepper.scovilleRating %></h5>
       </li>
     <% }) %>
   </ul>
 </main>
 
 <%- include('../partials/footer') %> 
-<div id="animated-pepper-two">🌶️</div>
-<div id="animated-pepper-three">🌶️</div>
-<div id="animated-pepper-four">🌶️</div>
-<div id="animated-pepper-seven">🌶️</div>
-<div id="animated-pepper-nine">🌶️</div>
-<div id="animated-pepper-eight">🌶️</div>
-<div id="animated-pepper-one">🌶️</div>
-<div id="animated-pepper-five">🌶️</div>
-<div id="animated-pepper-ten">🌶️</div>
-<div id="animated-pepper-six">🌶️</div>
+<div id="animation">
+  <div id="animated-pepper-two">🌶️</div>
+  <div id="animated-pepper-three">🌶️</div>
+  <div id="animated-pepper-four">🌶️</div>
+  <div id="animated-pepper-seven">🌶️</div>
+  <div id="animated-pepper-nine">🌶️</div>
+  <div id="animated-pepper-eight">🌶️</div>
+  <div id="animated-pepper-one">🌶️</div>
+  <div id="animated-pepper-five">🌶️</div>
+  <div id="animated-pepper-ten">🌶️</div>
+  <div id="animated-pepper-six">🌶️</div>
+</div>
 </div>

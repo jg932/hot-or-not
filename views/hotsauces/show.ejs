@@ -4,13 +4,20 @@
 
 <div class="sauces-background-image">
 <section>
-  <h1> <%= hotsauce.name %> added by <%= hotsauce.owner.name %> who prefers <%  %></h1>
-  <br>
+  <h1 id="sauce-added-by"> <%= hotsauce.name %> added by <%= hotsauce.owner.name %> who prefers <%  %></h1>
   <% if (hotsauce.owner.equals(user?.profile._id)) { %>
     <form action="/hotsauces/<%= hotsauce._id %>?_method=DELETE" method="POST">
-      <button class="btn" type="submit">Delete this sauce</button>
+      <button id="sauce-delete-button" class="all-buttons" type="submit">Delete this sauce</button>
     </form>
+    <br><br>
   <% } %> 
+  <!-- <p>Use the dropdown menu to select which type of peppers are used in this sauce!
+    <select>
+      <%# peppers.forEach(function(pepper) { %>
+        <option><%#= pepper.pepper %></option>
+      <%# }) %>
+    </select>
+  </p> -->
 </section>
 
 <section>
@@ -19,10 +26,6 @@
       <label>
         Your Name: 
         <input type="text" name="reviewersName" autocomplete="off">
-      </label><br>
-      <label>
-        Review:
-        <input type="textArea" name="review" autocomplete="off">
       </label><br>
       <label for="rating">Overall rating
         <select name=rating>
@@ -47,34 +50,39 @@
         Purchase Info:
         <input type="text" name="purchaseInfo" autocomplete="off">
       </label><br>
-      <button type="submit">Add Review</button>
+      <label>
+        Review:
+        <input type="textArea" name="review" autocomplete="off">
+      </label><br>
+      <button class="all-buttons" type="submit">Add Review</button>
     </form>
   <% } %>
 </section>
 
 <% if (hotsauce.reviews.length) { %>
+  <div id="review-display">
   <table>
     <thead>
       <tr>
         <th>Reviewer</th>
-        <th>Review</th>
         <th>Rating</th>
         <th>Spice Rating</th>
         <th>Purchase Info</th>
+        <th>Review</th>
       </tr>
     </thead>
     <tbody>
       <% hotsauce.reviews.forEach(function(review) {%>
         <tr>
           <td><%= review.reviewersName %></td>
-          <td><%= review.review %></td>
           <td><%= review.rating %></td>
           <td><%= review.spiciness %></td>
           <td><%= review.purchaseInfo %></td>
+          <td><%= review.review %></td>
           <td>
             <% if (hotsauce.owner.equals(user?.profile._id)) { %>
             <a href="/hotsauces/<%= hotsauce._id %>/reviews/<%= review._id %>/edit" method="GET">
-              <button class="btn" type="submit">Edit</button></a>
+              <button class="all-buttons" type="submit">Edit</button></a>
             <% } %>
             </form>
           </td>
@@ -85,6 +93,7 @@
 <% } else { %>
   <h3>No Reviews So Far</h3>
   <% } %>
+</div>
 </main>
 
 <%- include('../partials/footer') %>
