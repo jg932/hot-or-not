@@ -2,7 +2,7 @@
 
 <%- include('../partials/nav') %>
 
-<div id="sauces-background-image">
+<div class="sauces-background-image">
 <section>
   <br>
   <br>
@@ -12,9 +12,19 @@
   <h3 id="new-sauce-message">Add a New Sauce</h3>
   <form action="/hotsauces" method="POST">
     <label>
-      <h4 id="new-sauce-message-two">Name:</h4>
       <input type="text" name="name" autocomplete="off" required>
     </label>
+    <label for="spiciness">Name | Spice Scale
+      <select name=spiciness>
+        <option value="Mild">Mild</option>
+        <option value="Medium">Medium</option>
+        <option value="Hot">Hot</option>
+        <option value="Spicy">Spicy</option>
+        <option value="Spice Spice">Spice Spice</option>
+        <option value="Extreme">Extreme Spice Spice</option>
+        <option value="☠️">☠️</option>
+      </select>
+    <label><br>
     <button class="all-buttons" type="submit"> Add Sauce</button>
   </form>
     <% } %> 
@@ -23,7 +33,7 @@
   <ul>
     <% hotsauces.forEach(hotsauce => { %>
       <li>
-        <a id="sauce-list" href="/hotsauces/<%= hotsauce._id %>"><%= hotsauce.name %></a>
+        <a id="sauce-list" href="/hotsauces/<%= hotsauce._id %>"><%= hotsauce.name %></a> <h5>current spiciness rating: <%= hotsauce.spiciness %></h5>
       </li><br>
     <% }) %>
   </ul>

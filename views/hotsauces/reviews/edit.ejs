@@ -2,7 +2,7 @@
 
 <%- include("../../partials/nav") %>
 
-
+<div class="sauces-background-image">
 <section>
   <h1>Edit the Review!</h1>
       <% if (user) { %>
@@ -11,17 +11,6 @@
             Your Name: 
             <input type="text" name="reviewersName" autocomplete="off" value="<%= review.reviewersName %>">
           </label><br>
-          <label for="reviewersPreference">What is your personal spicy preference:
-            <select name=reviewersPreference value="<%= review.reviewersPreference %>">
-              <option value="Mild">Mild</option>
-              <option value="Medium">Medium</option>
-              <option value="Hot">Hot</option>
-              <option value="Spicy">Spicy</option>
-              <option value="Spice Spice">Spice Spice</option>
-              <option value="Extreme">Extreme Spice Spice</option>
-              <option value="☠️">☠️</option>
-            </select>
-          <label><br>
           <label>
             Review:
             <input type="text" name="review" autocomplete="off" value="<%= review.review %>">
@@ -51,8 +40,9 @@
           </label><br>
         </form>
       <% } %>
-    <button type="submit">Save</button>
+    <button type="submit" class="all-buttons">Save</button>
   </form>
 </section>
 
 <%- include("../../partials/footer") %>
+</div>

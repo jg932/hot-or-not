@@ -1,0 +1,100 @@
+<%- include("../partials/html-head") %>
+
+<%- include("../partials/nav") %>
+  <body>
+    <header class="p-3 bg-dark text-white">
+      <nav class="container">
+        <div
+          class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
+        >
+          <ul
+            class="nav col-12 col-lg-auto me-lg-auto mb-2 mb-md-0 justify-content-center"
+          >
+            <li>
+              <a href="" class="nav-link px-2 text-white">
+                <h1 class="mb-0">Spicy Profiles</h1>
+              </a>
+            </li>
+          </ul>
+          <form
+            action="/profiless"
+            method="GET"
+            class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3"
+          >
+            <input
+              id="search"
+              class="form-control form-control-dark"
+              type="search"
+              name="name"
+              placeholder="Search name..."
+              value="<%= name %>"
+              autocomplete="off"
+            />
+          </form>
+        </div>
+    </header>
+    <div class="container">
+      <h2 class="mt-3 mb-3">Spicy Contributers</h2>
+      <% profiles.forEach(function(profile) { %>
+        <div class="card mb-3 bg-dark text-white">
+          <div class="row g-0">
+            <div class="col-md-2">
+              <% if (profile.avatar) { %>
+                <img 
+                  src="<%= profile.avatar %>" 
+                  alt="<%= profile.name %> profile"
+                  class="img-fluid rounded-start"
+                />
+              <% } else { %>
+                <img 
+                  src="/images/profile.png" 
+                  alt="placeholder avatar"
+                  class="img-fluid rounded-start"
+                >
+              <% } %> 
+            </div>
+            <div class="col-md-10">
+              <div class="card-body">
+                <h3 class="card-title"><%= profile.name %></h3>
+                <ul>
+                  <li class="card-text"><%= profile.preference %></li>
+                </ul>
+                <% // Add dynamic UI form below this line %> 
+                <% if (profile._id.equals(profile?._id)) { %>
+                  <div class="card-footer">
+                    <form
+                      action="/profile/preference"
+                      method="POST"
+                      class="input-group"
+                    >
+                    <label for="preference">Your Preferred Spice Level:
+                      <select name="preference">
+                        <option value="Mild">Mild</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Hot">Hot</option>
+                        <option value="Spicy">Spicy</option>
+                        <option value="Spice Spice">Spice Spice</option>
+                        <option value="Extreme">Extreme Spice Spice</option>
+                        <option value="☠️">☠️</option>
+                      </select>
+                      <button type="submit" class="btn btn-primary">
+                        Add Preference
+                      </button>
+                    </form>
+                  </div>
+                <% } %>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+    <% // JavaScript for Bootstrap %>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
+
+    <%- include("../partials/footer") %>

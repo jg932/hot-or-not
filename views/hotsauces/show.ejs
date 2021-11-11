@@ -2,8 +2,9 @@
 
 <%- include('../partials/nav') %>
 
+<div class="sauces-background-image">
 <section>
-  <h1> <%= hotsauce.name %> added by <%= hotsauce.owner.name %></h1>
+  <h1> <%= hotsauce.name %> added by <%= hotsauce.owner.name %> who prefers <%  %></h1>
   <br>
   <% if (hotsauce.owner.equals(user?.profile._id)) { %>
     <form action="/hotsauces/<%= hotsauce._id %>?_method=DELETE" method="POST">
@@ -19,17 +20,6 @@
         Your Name: 
         <input type="text" name="reviewersName" autocomplete="off">
       </label><br>
-      <label for="reviewersPreference">What is your personal spicy preference:
-        <select name=reviewersPreference>
-          <option value="Mild">Mild</option>
-          <option value="Medium">Medium</option>
-          <option value="Hot">Hot</option>
-          <option value="Spicy">Spicy</option>
-          <option value="Spice Spice">Spice Spice</option>
-          <option value="Extreme">Extreme Spice Spice</option>
-          <option value="☠️">☠️</option>
-        </select>
-      <label><br>
       <label>
         Review:
         <input type="textArea" name="review" autocomplete="off">
@@ -67,7 +57,6 @@
     <thead>
       <tr>
         <th>Reviewer</th>
-        <th>Reviewers Preference</th>
         <th>Review</th>
         <th>Rating</th>
         <th>Spice Rating</th>
@@ -78,7 +67,6 @@
       <% hotsauce.reviews.forEach(function(review) {%>
         <tr>
           <td><%= review.reviewersName %></td>
-          <td><%= review.reviewersPreference %></td>
           <td><%= review.review %></td>
           <td><%= review.rating %></td>
           <td><%= review.spiciness %></td>
@@ -100,7 +88,6 @@
 </main>
 
 <%- include('../partials/footer') %>
-<%- include('../partials/footer') %>
 
-
+</div>
 

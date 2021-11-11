@@ -4,10 +4,6 @@ const Schema = mongoose.Schema
 
 const reviewSchema = new Schema({
   reviewersName: String,
-  reviewersPreference: {
-    type: String,
-    enum: ["Mild", "Medium", "Hot", "Spicy", "Spice Spice", "Extreme", "☠️",],
-  },
   review: String,
   rating: {
     type: Number,
@@ -24,6 +20,7 @@ const reviewSchema = new Schema({
 
 const hotsauceSchema = new Schema({
   name: String,
+  spiciness: String,
   owner: {type: Schema.Types.ObjectId, ref: "Profile"},
   reviews: [reviewSchema]
 }, {timestamp: true

@@ -20,6 +20,7 @@ import { router as authRouter } from './routes/auth.js'
 import { router as hotsauceRouter } from './routes/hotsauces.js'
 import { passUserToView } from './middleware/middleware.js'
 import { router as peppersRouter } from './routes/peppers.js'
+import { router as profilesRouter } from './routes/profiles.js'
 
 // create the express app
 const app = express()
@@ -66,6 +67,7 @@ app.use('/', indexRouter)
 app.use('/auth', authRouter)
 app.use('/hotsauces', hotsauceRouter)
 app.use('/peppers', peppersRouter)
+app.use('/profiles', profilesRouter)
 
 
 // catch 404 and forward to error handler
