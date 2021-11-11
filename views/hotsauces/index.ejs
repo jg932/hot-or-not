@@ -2,30 +2,34 @@
 
 <%- include('../partials/nav') %>
 
+<div id="sauces-background-image">
 <section>
+  <br>
+  <br>
   <h1>Hot Sauce Database</h1>
   <div id="spicy-image"></div>
   <% if (user) { %> 
-  <h2>Add a New Sauce</h2>
+  <h3 id="new-sauce-message">Add a New Sauce</h3>
   <form action="/hotsauces" method="POST">
     <label>
-      Name:
-      <input type="text" name="name" autocomplete="off">
+      <h4 id="new-sauce-message-two">Name:</h4>
+      <input type="text" name="name" autocomplete="off" required>
     </label>
-    <button type="submit"> Add Sauce</button>
+    <button class="all-buttons" type="submit"> Add Sauce</button>
   </form>
     <% } %> 
-  <h2>All the Sauces!</h2>
+  <div id="sauce-listings">
+  <h3>All the Sauces!</h3>
   <ul>
     <% hotsauces.forEach(hotsauce => { %>
       <li>
-        <a href="/hotsauces/<%= hotsauce._id %>"><%= hotsauce.name %></a>
-      </li>
+        <a id="sauce-list" href="/hotsauces/<%= hotsauce._id %>"><%= hotsauce.name %></a>
+      </li><br>
     <% }) %>
   </ul>
+</div>
 </section>
-
-
-
+</main>
 
 <%- include('../partials/footer') %>
+</div>

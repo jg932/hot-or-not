@@ -27,7 +27,7 @@ body {
 
 nav {
   background-color: rgba(255, 0, 0, 0.475);
-  font-size: 1.6rem;
+  font-size: 2.3rem;
   display: flex;
   justify-content: space-around;
   align-content: center;
@@ -43,24 +43,43 @@ main {
 h1 {
   font-size: 3.6rem;
   color: white;
+
 }
 
 h2 {
   color: white;
+
 }
 
 h3 {
   font-size: 25px;
   color: white;
+
 }
+
+h4{
+  font-size: 30px;
+
+}
+
 
 form {
   color: white;
 }
 
-#background-image{
-  content: " ";
-  background: url("/images/hotsauces/backgroundOne.jpeg");
+button{
+  border-radius: 20px;
+}
+
+.all-buttons{
+  background-color: red;
+  color: black;
+  font-weight:bold;
+  border-color: rgb(116, 0, 0);
+}
+
+#home-background-image{
+  background: url("/images/hotsauces/general-background.jpg");
   opacity: .2;
   top: 0;
   left: 0;
@@ -70,26 +89,72 @@ form {
   z-index: -1;
 }
 
+#sauces-background-image{
+    background: url("/images/hotsauces/backgroundOne.jpeg");
+    opacity: .2;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+    text-align: center;
+  }
+
+#sauce-listings{
+  text-align: left;
+  padding-left: 150px;
+  }
+
+#hello-msg{
+  padding: 0 0 0 0;
+  margin: 20px 0 10px 0 ;
+}
+
 #welcome-message{
-  padding: 0 50px 0 50px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
 
-#pepper-background {
-  background: url("/images/hotsauces/pepper-background.jpeg");
-  opacity: .5;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  background-repeat: no-repeat;
-  background-size: 100%;
-  z-index: -1;
+#welcome-message-two{
+  padding: 20px 0 0 0;
+  margin: 0 0 0 0;
 }
+
+#welcome-message-three{
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+}
+#welcome-message-four{
+  padding: 0 50px 0 50px;
+}
+
+#new-sauce-message{
+  padding: 30px 0 0 150px;
+  border: 0 0 0 0;
+  margin: 0 0 0 0;
+  text-align: left;
+}
+
+#new-sauce-message-two{
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+}
+
+#pepper-background {
+    background: url("/images/hotsauces/pepper-background.jpeg");
+    opacity: .5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    z-index: -1;
+  }
 
 #logout-btn {
   background-color: rgb(155, 155, 155);
@@ -103,13 +168,24 @@ form {
   padding-top: 50px;
 }
 
-#spicy-image{
-  background-image: url("/images/hotsauces/spicy-fire-image.jpeg");
+#spicy-fire{
+  border-radius: 50px;
 }
 
 #google-button{
   padding: 0 0 0 0;
 }
+
+#avatar-image{
+  border-radius: 20px;
+}
+
+#sauce-list{
+  font-size: 20px;
+}
+
+
+
 
 
 /* this is a bad idea */

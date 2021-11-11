@@ -1,24 +1,29 @@
 <%- include('./partials/html-head') %>
 <%- include('./partials/nav') %>
 
-<div id="background-image">
+<div id="home-background-image">
 <main>
-  <h1>hello, <%= user ? user.profile.name : "spice lovers!" %></h1>
+  <br>
+  <br>
+  <h1 id="hello-msg">hello, <%= user ? user.profile.name : "spice lovers!" %></h1>
   <% if (user?.profile.avatar) { %>
     <div>
       <img 
+        id="avatar-image"
         src="<%= user.profile.avatar %>" 
         alt="<%= user.profile.name %> avatar"
       >
     </div>
   <% } %>
   <div id="welcome-message"> 
-    <h1>Welcome to Hot or Not!</h1>
-    <h1>database of</h1>
-    <img src="/images/hotsauces/spicy-fire-image.jpeg" alt="an image of the word spicy spelled out in fire">
-      <h3>You are welcome to explore our hot sauce and chili peppers listings.  Hot sauces have reviews that you can peruse.<br>  
-      If you log in with Google you can add reviews to existing entries and add your own spicy finds to the database yourself.<br>
-      </h3>
+    <h1 id="welcome-message-two">Welcome to Hot or Not!</h1>
+    <h1 id="welcome-message-three">a database of</h1>
+    <img id="spicy-fire"src="/images/hotsauces/spicy-fire-image.jpeg" alt="an image of the word spicy spelled out in fire">
+      <div id="welcome-message-four">
+      <h3>You are welcome to explore our hot sauce and chili peppers listings.  Hot sauces have reviews that you can peruse.
+        <br><br>
+      If you log in with Google you can add reviews to existing entries and add your own spicy finds to the database yourself.
+      </h3></div>
     </div>
 </main>
 

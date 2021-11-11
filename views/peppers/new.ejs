@@ -13,19 +13,31 @@
         <option><%= pepper.pepper %></option>
       <% }) %>
     </select>
-    <div id="animated-pepper-two">🌶️</div>
+
   </p>
   <form id="add-pepper-form" action="/peppers" method="POST" placeholder="Pepper Name">
-    <div id="animated-pepper-three">🌶️</div>
-    <label for="pepper-name" placeholder="Pepper Name"></label>
-    <input type="text" name="pepper" id="pepper-input" required>
-    <button type="submit">Add Pepper</button>
+    <label for="pepper-name" placeholder="Pepper Name">
+      Pepper name:
+      <input type="text" name="pepper" id="pepper-input" required>
+    </label>
+    <label>
+      Scoville Rating:<input type="number" name="scovilleRating" required>
+    </label>
+    <button class="all-buttons" type="submit">Add Pepper</button>
   </form>
-</div>
-</div>
+  <h2>All the Peppers!</h2>
+  <ul>
+    <% peppers.forEach(pepper => { %>
+      <li>
+        <h4><%= pepper.pepper %> - Scoville rating <%= pepper.scovilleRating %></h4>
+      </li>
+    <% }) %>
+  </ul>
 </main>
 
 <%- include('../partials/footer') %> 
+<div id="animated-pepper-two">🌶️</div>
+<div id="animated-pepper-three">🌶️</div>
 <div id="animated-pepper-four">🌶️</div>
 <div id="animated-pepper-seven">🌶️</div>
 <div id="animated-pepper-nine">🌶️</div>
