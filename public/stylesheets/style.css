@@ -226,16 +226,8 @@ border-top: 0;
   font-size: 20px;
 }
 
-/* #review-display{
-  display:flex;
-  align-content: center;
-  justify-content: center;
-  justify-items: center;
-  text-align: center;
-  text-align: center;
-} */
-
 #sauce-added-by{
+  padding-top: 8%;
   padding-bottom: 0;
   margin-bottom: 15px;
 }
@@ -277,6 +269,11 @@ border-top: 0;
   width: 100%;
   overflow: scroll;
   color: white;
+}
+
+.review-form{
+  width: 150px;
+  height: 50px;
 }
 
 
