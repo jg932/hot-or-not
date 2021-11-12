@@ -15,7 +15,7 @@ To add any entries: hotsauces, peppers or reviews, you must be logged in. If you
 ![image of the display](https://i.imgur.com/KU3sQZx.png)
 ![image of log in display](https://i.imgur.com/dapufQY.png)
 
-## Geneal Background Info
+## General Background Info
 
 Spicy food is a love of mine.  This project has been an opportunity to combine my love of spicy with my love of organization!  Do most people need a database of hot sauces?  Probably not. But if you want to find the right sauce for a meal or recipe you don't have much opportunity to actually try a sauce. Suddenly you have a few bottles of not very good hot sauce with no easy way to use them up. 
 
