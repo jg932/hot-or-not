@@ -7,7 +7,8 @@
   <h1 class="spicy-font" id="pepper-database"><%= title %></h1>
   <div id="pepper-page"></div>
 
-  <form id="add-pepper-form" action="/peppers" method="POST" placeholder="Pepper Name">
+  <% if (user) { %> 
+    <form id="add-pepper-form" action="/peppers" method="POST" placeholder="Pepper Name">
     <label for="pepper-name" placeholder="Pepper Name">
       <input type="text" name="pepper" id="pepper-input" required>
     </label>
@@ -16,6 +17,7 @@
     </label> <br>
     <button class="all-buttons" id="add-pepper-button" type="submit">Add Pepper</button>
   </form>
+  <% } %>
   <h2 id="all-the-peppers">All the Peppers!</h2>
   <ul>
     <% peppers.forEach(pepper => { %>
