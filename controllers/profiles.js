@@ -10,6 +10,7 @@ function index(req, res) {
     .exec(function (error, profiles) {
       if (error) return next(error)
       res.render("profiles/index", {
+        title: profiles,
         profiles: profiles,
         name: req.query.name,
         user: req.user,
@@ -18,8 +19,8 @@ function index(req, res) {
 }
 
 function addPreference(req, res) {
-  Profile.findById(req.user.profiles._id, function(error, profile){
-    profile.preference.push(req.body)
+  Profile.findById(req.user.profile._id, function(error, profile){
+    profile.preference = req.body.preference
     profile.save(function (error){
       res.redirect("/profiles")
     })

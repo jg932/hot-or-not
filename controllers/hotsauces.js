@@ -71,6 +71,7 @@ function createReview(req, res) {
   Hotsauce.findById(req.params.id, function(error, hotsauce){
     hotsauce.reviews.push(req.body)
     hotsauce.save(function(error) {
+    console.log(error)
       res.redirect(`/hotsauces/${hotsauce._id}`)
     })
   })
@@ -92,20 +93,20 @@ function edit(req, res) {
 }
 
 function update(req, res) {
-  console.log("I AM UPDATING")
+  console.log(req.params)
   Hotsauce.findById(req.params.id)
-  .then ( hotsauce => {
-    const review = hotsauce.reviews.id(req.params.review._id)
-    review.set(req.body)
-    hotsauce.save()
-  })
-  .then (() => {
-    res.redirect(`/hotsauces/${hotsauce._id}`)
-  })
-    .catch(err => {
-    console.log(err)
-    res.redirect("/hotsauces")
-  })
+    .then((hotsauce) => {
+      const review = hotsauce.reviews.id(req.params.reviewId)
+      review.set(req.body)
+      hotsauce.save()
+        .then (() => {
+          res.redirect(`/hotsauces/${hotsauce._id}`)
+        })
+        .catch(err => {
+          console.log(err)
+          res.redirect("/hotsauces")
+        })
+    })
 }
 
 function editReview(req, res) {

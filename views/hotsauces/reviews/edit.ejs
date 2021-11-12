@@ -4,24 +4,20 @@
 
 <div class="sauces-background-image">
 <section>
-  <h1>Edit the Review!</h1>
+  <h1 class="spicy-font">Edit the Review!</h1>
       <% if (user) { %>
-        <form action="/hotsauces/<%= hotsauce._id %>/reviews/<%= review._id %>" method="PUT">
+        <form action="/hotsauces/<%= hotsauce._id %>/reviews/<%= review._id %>" method="POST">
           <label>
             Your Name: 
             <input type="text" name="reviewersName" autocomplete="off" value="<%= review.reviewersName %>">
           </label><br>
-          <label>
-            Review:
-            <input type="text" name="review" autocomplete="off" value="<%= review.review %>">
-          </label><br>
           <label for="rating">Overall rating
             <select name=rating value="<%= review.rating %>">
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
+              <option value=1>1</option>
+              <option value=2>2</option>
+              <option value=3>3</option>
+              <option value=4>4</option>
+              <option value=5>5</option>
             </select>
           </label><br>
           <label for="spiciness">Spice Spice Scale:
@@ -37,6 +33,10 @@
           <label><br>
             Purchase Info:
             <input type="text" name="purchaseInfo" autocomplete="off" value="<%= review.purchaseInfo %>">
+          </label><br>
+          <label>
+            Review:
+            <input type="text" name="review" autocomplete="off" value="<%= review.review %>">
           </label><br>
         </form>
       <% } %>

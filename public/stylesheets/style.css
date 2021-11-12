@@ -88,8 +88,6 @@ border-top: 0;
 }
 
 #home-background-image{
-  background: url("/images/hotsauces/general-background.jpg");
-  opacity: .2;
   top: 0;
   left: 0;
   bottom: 0;
@@ -98,9 +96,20 @@ border-top: 0;
   z-index: -1;
 }
 
+#home-background-image::after{
+  content: "";
+  background: url("/images/hotsauces/general-background.jpg");
+  opacity: .3;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  background-size: cover;
+}
+
 .sauces-background-image{
-    background: url("/images/hotsauces/backgroundOne.jpeg");
-    opacity: .2;
     top: 0;
     left: 0;
     bottom: 0;
@@ -108,6 +117,18 @@ border-top: 0;
     position: absolute;
     z-index: -1;
     text-align: center;
+  }
+
+  .sauces-background-image::after{
+    content: "";
+    background: url("/images/hotsauces/backgroundOne.jpeg");
+    opacity: .3;
+    top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
   }
 
 #sauce-listings{
@@ -152,9 +173,7 @@ border-top: 0;
   margin: 0 0 0 0;
 }
 
-#pepper-background {
-    background: url("/images/hotsauces/pepper-background.jpeg");
-    opacity: .5;
+.pepper-background {
     top: 0;
     left: 0;
     bottom: 0;
@@ -164,6 +183,20 @@ border-top: 0;
     background-size: 100vh;
     z-index: -1;
   }
+
+.pepper-background::after{
+  content: "";
+  background: url("/images/hotsauces/pepper-background.jpeg");
+  opacity: .3;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: cover; 
+  z-index: -1;
+}
 
 #logout-btn {
   background-color: rgb(155, 155, 155);
@@ -230,6 +263,16 @@ border-top: 0;
   font-family: spicy;
 }
 
+#spicy-contributers {
+  text-align: center;
+  padding-top: 3%;
+}
+
+.profile-pic{
+  border-radius: 30px;
+  padding-left: 20px;
+}
+
 
 
 /* this is a bad idea */
@@ -241,6 +284,7 @@ border-top: 0;
   padding:2em;
   animation: drop 2s ease forwards;
   animation-iteration-count:infinite;
+  left: 5%;
 }
 
 @keyframes drop{
@@ -256,6 +300,7 @@ border-top: 0;
   padding:2em;
   animation: drop 4s ease forwards;
   animation-iteration-count:infinite;
+  left: 12%;
 }
 
 @keyframes drop{
@@ -271,6 +316,7 @@ border-top: 0;
   padding:2em;
   animation: drop 3s ease forwards;
   animation-iteration-count:infinite;
+  left: 21%;
 }
 
 @keyframes drop{
@@ -286,6 +332,7 @@ border-top: 0;
   padding:2em;
   animation: drop 11s ease forwards;
   animation-iteration-count:infinite;
+  left: 30%;
 }
 
 @keyframes drop{
@@ -301,6 +348,7 @@ border-top: 0;
   padding:2em;
   animation: drop 2s ease forwards;
   animation-iteration-count:infinite;
+  left: 48%;
 }
 
 @keyframes drop{
@@ -315,6 +363,7 @@ border-top: 0;
   padding:2em;
   animation: drop 2s ease forwards;
   animation-iteration-count:infinite;
+  left: 59%;
 }
 
 @keyframes drop{
@@ -330,6 +379,7 @@ border-top: 0;
   padding:4em;
   animation: drop 5s ease forwards;
   animation-iteration-count:infinite;
+  left: 70%;
 }
 
 @keyframes drop{
@@ -345,6 +395,7 @@ border-top: 0;
   padding:2em;
   animation: drop 6s ease forwards;
   animation-iteration-count:infinite;
+  left: 82%;
 }
 
 @keyframes drop{
@@ -360,6 +411,7 @@ border-top: 0;
   padding:2em;
   animation: drop 10s ease forwards;
   animation-iteration-count:infinite;
+  left: 90%;
 }
 
 @keyframes drop{
@@ -375,6 +427,7 @@ border-top: 0;
   padding: 4em;
   animation: drop 6s ease backwards;
   animation-iteration-count:infinite;
+  left: 97%;
 }
 
 @keyframes drop{

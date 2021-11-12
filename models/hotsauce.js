@@ -7,7 +7,7 @@ const reviewSchema = new Schema({
   review: String,
   rating: {
     type: Number,
-    enum: ["1", "2", "3", "4", "5"],
+    enum: [1, 2, 3, 4, 5],
   },
   spiciness: {
     type: String,
