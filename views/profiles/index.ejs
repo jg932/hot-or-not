@@ -29,7 +29,7 @@
                 <ul>
                   <li class="card-text"><h5>Prefers <%= profile.preference %> sauces & peppers!</h5></li>
                 </ul>
-                <% if (profile._id.equals(profile?._id)) { %>
+                <% if (profile._id.equals(user?.profile._id)) { %>
                   <div class="card-footer">
                     <form
                       action="/profiles/preference"
