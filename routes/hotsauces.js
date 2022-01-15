@@ -5,7 +5,6 @@ import {isLoggedIn} from '../middleware/middleware.js'
 const router = Router()
 
 router.get('/', hotsaucesCtrl.index)
-// router.get('/new', hotsaucesCtrl.new)
 router.get('/:id', hotsaucesCtrl.show)
 router.get('/:id/edit', hotsaucesCtrl.edit)
 
