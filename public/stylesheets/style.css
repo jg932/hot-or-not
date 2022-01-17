@@ -251,24 +251,25 @@ border-top: 0;
   grid-template-rows: repeat(2, 300px);
 }
 
-.spicy-font{
-  font-family: spicy;
-}
 
 #spicy-contributers {
   text-align: center;
   padding-top: 3%;
 }
 
-.profile-pic{
-  border-radius: 30px;
-  padding-left: 20px;
-}
-
 #review-table{
   width: 100%;
   overflow: scroll;
   color: white;
+}
+
+.spicy-font{
+  font-family: spicy;
+}
+
+.profile-pic{
+  border-radius: 30px;
+  padding-left: 20px;
 }
 
 .review-form{
@@ -279,7 +280,17 @@ border-top: 0;
 
 
 
-/* this is a bad idea */
+
+
+
+
+
+
+
+
+
+
+/* Chili Pepper Animations */
 
 #animated-pepper-one{
   position:absolute;
